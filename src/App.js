@@ -17,25 +17,39 @@ import Footer from "./components/Footer";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  (
+  <>
+      <h3>Apartment App</h3>    
+      <Header currentUser={currentUser} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/herbsindex"
+          element={<HerbsIndex herbs={herbs} />}
+        />
+        <Route path="/myherbs" element={<HerbsProtectedIndex />} />
+        <Route
+          path="/herbsshow/:id"
+          element={<HerbShow herbs={herbs} />}
+        />
+        <Route
+          path="/herbsnew"
+          element={<HerbNew currentUser={currentUser} />}
+        />
+        <Route
+          path="/herbedit/:id"
+          element={
+            <HerbEdit currentUser={currentUser} herbs={herbs} />
+          }
+        />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </>
+  )
 }
 
 export default App;
