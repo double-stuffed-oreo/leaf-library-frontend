@@ -20,7 +20,7 @@ import AboutUs from "./pages/AboutUs";
 const App = () => {
   (
   <>
-      <h3>Apartment App</h3>    
+      <h3>The Leaf Library</h3>    
       <Header currentUser={currentUser} />
       <Routes>
         <Route path="/" element={<Home />} />
