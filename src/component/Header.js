@@ -9,7 +9,7 @@ import {
   DropdownMenu,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/navbar-logo.png"
+import logo from "../assets/white-logo.png"
 
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <>
-      <Navbar className="navbar" color="light" light>
+      <Navbar className="navbar">
         <NavbarBrand to="/">
           <img className="logo"
             alt="logo"
