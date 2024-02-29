@@ -17,8 +17,9 @@ import mockUsers from "./mockUsers.js";
 import mockHerbs from "./mockHerbs.js";
 import './App.css';
 
-
 const App = () => {
+  const [currentUser, setCurrentUser] = useState(mockUsers[0])
+  const [herbs, setHerbs] = useState(mockHerbs)
   return (
     <>
       <Header />
@@ -28,7 +29,7 @@ const App = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/herbindex" element={<HerbIndex />} />
+        <Route path="/herbindex" element={<HerbIndex herbs={herbs} />} />
         <Route path="/myherbs" element={<HerbProtectedIndex />} />
         <Route path="/herbshow/:id" element={<HerbShow />} />
         <Route path="/herbnew" element={<HerbNew />} />
