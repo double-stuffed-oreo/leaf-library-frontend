@@ -3,7 +3,9 @@ import React from "react"
 const Home = () => {
   return (
     <>
-      {/* <h3>The Leaf Library</h3> */}
+      <div className="home-contents">
+        <h1 className="home-intro">Welcome to the Leaf Library</h1>
+      </div>
     </>
   )
 } 
