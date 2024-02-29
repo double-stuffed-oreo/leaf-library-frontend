@@ -15,11 +15,11 @@ const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen(!dropdownOpen);
-  
+
   return (
     <>
       <Navbar className="navbar" color="light" light>
-        <NavbarBrand href="/">
+        <NavbarBrand to="/">
           <img className="logo"
             alt="logo"
             src={logo}

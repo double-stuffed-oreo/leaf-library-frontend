@@ -21,7 +21,6 @@ import './App.css';
 const App = () => {
   return (
     <>
-      {/* <h3>The Leaf Library</h3>     */}
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
