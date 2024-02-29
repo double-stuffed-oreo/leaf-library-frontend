@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route } from "react-router-dom";
-import { BrowserRouter, Link, Outlet, useRoutes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 import Home from "./pages/Home";
@@ -14,16 +13,15 @@ import NotFound from "./pages/NotFound";
 import HerbNew from "./pages/HerbNew";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
-import mockUsers from './mockUsers.js';
-import mockHerbs from './mockHerbs.js';
+import mockUsers from "./mockUsers.js";
+import mockHerbs from "./mockHerbs.js";
 import './App.css';
 
 
 const App = () => {
-
-  (
+  return (
     <>
-      <h3>The Leaf Library</h3>    
+      {/* <h3>The Leaf Library</h3>     */}
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,7 +29,7 @@ const App = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/herbsindex" element={<HerbIndex />} />
+        <Route path="/herbindex" element={<HerbIndex />} />
         <Route path="/myherbs" element={<HerbProtectedIndex />} />
         <Route path="/herbshow/:id" element={<HerbShow />} />
         <Route path="/herbnew" element={<HerbNew />} />
