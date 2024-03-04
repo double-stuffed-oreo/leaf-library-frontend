@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Route, Routes } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 import Home from "./pages/Home";
@@ -18,19 +18,95 @@ import mockHerbs from "./mockHerbs.js";
 import './App.css';
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(mockUsers[0])
+  const [currentUser, setCurrentUser] = useState(null)
   const [herbs, setHerbs] = useState(mockHerbs)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user")
+    if(loggedInUser) {
+      setCurrentUser(JSON.parse(loggedInUser))
+    }
+  },[])
+
+  console.log(currentUser)
+  const signUp = (userInfo) => {
+    fetch("http://localhost:3000/signup", {
+      body: JSON.stringify(userInfo),
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      method: "POST"
+    })
+    .then((response) => {
+      if(!response.ok) {
+        throw Error(response.statusText)
+      }
+      localStorage.setItem("token", response.headers.get("Authorization"))
+      return response.json()
+    })
+    .then((payload) => {
+      localStorage.setItem("user", JSON.stringify(payload))
+      setCurrentUser(payload)
+    })
+    .catch(error => console.log("Sign up errors: ",error))
+  }
+
+  const signIn = (userInfo) => {
+    fetch("http://localhost:3000/login", {
+      body: JSON.stringify(userInfo),
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      method: "POST"
+    })
+    .then((response) => {
+      if(!response.ok) {
+        throw Error(response.statusText)
+      }
+      localStorage.setItem("token", response.headers.get("Authorization"))
+      return response.json()
+    })
+    .then((payload) => {
+      localStorage.setItem("user", JSON.stringify(payload))
+      setCurrentUser(payload)
+    })
+    .catch(error => console.log("Sign in errors: ",error))
+  }
+
+  const logout = () => {
+    fetch(`http://localhost:3000/logout`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+      method: "DELETE",
+    })
+      .then((payload) => {
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        setCurrentUser(null)
+      }).then(() => {
+        navigate("/")
+      })
+      .catch((error) => console.log("log out errors: ", error))
+  }
+  
   return (
     <>
-      <Header />
+      <Header currentUser={currentUser} logout={logout} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn signIn={signIn} />} />
+        <Route path="/signup" element={<SignUp signUp={signUp} />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/herbindex" element={<HerbIndex herbs={herbs} />} />
-        <Route path="/myherbs" element={<HerbProtectedIndex herbs={herbs} currentUser={currentUser} />} />
+        {currentUser && (
+          <Route path="/myherbs" element={<HerbProtectedIndex herbs={herbs} currentUser={currentUser} />} />
+        )}
         <Route path="/herbshow/:id" element={<HerbShow herbs={herbs} />} />
         <Route path="/herbnew" element={<HerbNew />} />
         <Route path="/herbedit/:id" element={ <HerbEdit />} />

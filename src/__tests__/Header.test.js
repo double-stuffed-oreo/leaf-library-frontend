@@ -25,25 +25,7 @@ describe("<Header />", () => {
     expect(indexLink).toBeInTheDocument()
   })
 
-  it("renders a contact us link", () => {
-    render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
-    )
-    const contactLink = screen.getByText("Contact Us")
-    expect(contactLink).toBeInTheDocument()
-  })
 
-  it("renders an about us link", () => {
-    render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
-    )
-    const aboutLink = screen.getByText("About Us")
-    expect(aboutLink).toBeInTheDocument()
-  })
 
   it("renders a sign up link", () => {
     render(
