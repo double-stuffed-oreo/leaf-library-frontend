@@ -9,7 +9,7 @@ import {
   Button,
 } from "reactstrap";
 
-const HerbShow = ({ herbs=[] }) => {
+const HerbShow = ({ herbs }) => {
   let { id } = useParams();
   const currentHerb = herbs?.find((herb) => herb.id === +id);
   const [showElement, setShowElement] = useState(true);
