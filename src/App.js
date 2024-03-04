@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/herbindex" element={<HerbIndex herbs={herbs} />} />
         <Route path="/myherbs" element={<HerbProtectedIndex />} />
-        <Route path="/herbshow/:id" element={<HerbShow />} />
+        <Route path="/herbshow/:id" element={<HerbShow herbs={herbs} />} />
         <Route path="/herbnew" element={<HerbNew />} />
         <Route path="/herbedit/:id" element={ <HerbEdit />} />
         <Route path="*" element={<NotFound />} />
