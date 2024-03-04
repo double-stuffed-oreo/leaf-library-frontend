@@ -43,6 +43,7 @@ body {
   background-position: 40% 50%;
   height: 80vh;
   background-repeat: no-repeat;
+  margin: 20px;
 }
 
 .not-found-content{
@@ -51,4 +52,99 @@ body {
   margin: 100px;
   color: white;
   text-align: center;
+}
+
+.single-herb-container{
+  width:100vw;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  padding:40px 20px;
+
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.herb-card{
+  display:flex;
+  flex-direction:column;
+  width:400px;
+  margin-bottom:60px;
+  object-fit:cover;
+  object-position:bottom;
+  justify-content: center;
+
+}
+
+.herb-image{
+  width:300px;
+  height:300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.herb-card-text{
+  margin:-30px auto;
+  margin-bottom:-50px;
+  height:35rem;
+  width:30rem;
+  background-color:#1D1C20;
+  color:#fff;
+  padding:15px;
+  overflow: auto;
+  display: flex;
+  vertical-align: middle;
+  flex-direction:column;
+  align-items: center;
+
+}
+
+.herb-scientific-name{
+  font-style:italic;
+  text-align:center;
+}
+.herb-common-name{
+  font-size:2.2rem;
+  margin-bottom:5px;
+  margin-top:5px;
+}
+
+.herb-card-body{
+  font-size:1.25rem;
+  background-size:cover;
+  background-position:right;
+  background-attachment:fixed;
+}
+
+.herb-return-index{
+  width:100px;
+  height:100px;
+  background-color:#87AE73;
+  color:#fff;
+  margin-left:auto;
+  font-size:2rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.delete-button {
+  width:100px;
+  height:100px;
+  background-color:#970C0A;
+  color:#fff;
+  margin-left:auto;
+  font-size:2rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.card-sections{
+  color:#87AE73
 }
