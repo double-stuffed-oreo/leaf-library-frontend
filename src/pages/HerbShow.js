@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { useParams, NavLink } from "react-router-dom";
-import {
-  Card,
-  CardImg,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-} from "reactstrap";
+import { Button } from "reactstrap";
 
 const HerbShow = ({ herbs }) => {
   let { id } = useParams();
