@@ -1,20 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Navbar,
   NavbarBrand,
-  NavItem,
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
-  DropdownMenu,
+  NavItem
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/white-logo.png"
 
-const Header = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggle = () => setDropdownOpen(!dropdownOpen);
+const Header = ({ currentUser, logout }) => {
+  const handleClick = () => {
+    logout()
+  }
 
   return (
     <>
@@ -40,26 +36,30 @@ const Header = () => {
             Library
           </NavLink>
         </NavItem>
-        <NavItem>
-          <NavLink to="/aboutus">
-            About Us
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink to="/contactus">
-            Contact Us
-          </NavLink>
-        </NavItem>
-        <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle nav caret>
-            Login
-          </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem to="/signup">Sign Up</DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem to="/signin">Sign In</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+        {currentUser && (
+          <>
+            <NavItem>
+              <NavLink to="/myherbs" className="nav-link">My Herbs</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink className="nav-link" onClick={handleClick}>Log Out</NavLink>
+            </NavItem>
+          </>
+        )}
+        {!currentUser && (
+          <>
+            <NavItem>
+              <NavLink to="/signin" className="nav-link">
+                Sign In
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/signup" className="nav-link">
+                Sign Up
+              </NavLink>
+          </NavItem>
+          </>
+        )}
       </Navbar>
     </>
   );

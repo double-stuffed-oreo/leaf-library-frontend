@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, CardImg, CardBody,
-  CardTitle, CardSubtitle, Button } from 'reactstrap';
+  CardTitle, CardSubtitle, Button, NavItem } from 'reactstrap';
 import { NavLink } from "react-router-dom"
 
 const HerbProtectedIndex = ({ herbs, currentUser}) => {
@@ -9,6 +9,9 @@ const HerbProtectedIndex = ({ herbs, currentUser}) => {
   return (
     <div className='herbs-body'>
       <h1>My Herbs</h1>
+      <NavItem>
+        <NavLink to="/herbnew" className="nav-link">Add a New Herb</NavLink>
+      </NavItem>
       <div className='flex-herbs'>
           {myHerbs?.map((herb, index) => {
             return(
