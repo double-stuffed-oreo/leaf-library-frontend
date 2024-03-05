@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import { Button } from "reactstrap";
 
-const HerbShow = ({ herbs }) => {
+const HerbShow = ({ herbs, currentUser }) => {
   let { id } = useParams();
   const currentHerb = herbs?.find((herb) => herb.id === +id);
   const [showElement, setShowElement] = useState(true);
@@ -35,6 +35,11 @@ const HerbShow = ({ herbs }) => {
         <NavLink to={`/herbindex`} className="herb-return-index">
           <Button className="herb-button">Back to Index</Button>
         </NavLink>
+        {currentUser && (
+          <NavLink to={`/herbedit/${currentHerb.id}`}>
+          <Button className='herb-button'>Edit Herb</Button>
+        </NavLink>
+        )}
       </div>
     </>
   );

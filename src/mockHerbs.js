@@ -7,7 +7,7 @@ let mockHerbs = [
     benefit: "Antiseptic, Muscle Pain, Wound Treatment for Eczema and Sunburns",
     warning: "Fresh Marigold is likely unsafe as comsumption fresh can cause diarrhea and severe irritation of stomach, intestines, bladder, and kidneys.",
     image:"https://cdn.britannica.com/76/118076-050-756CD4F5/French-marigold.jpg",
-    user_id: 1
+    user_id: 3
   },
   {
     id: 2,

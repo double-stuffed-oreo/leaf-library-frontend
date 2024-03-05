@@ -33,7 +33,10 @@ const App = () => {
     console.log(herb)
   }
 
-  console.log(currentUser)
+  const updateHerb = (herb) => {
+    console.log(herb)
+  }
+
   const signUp = (userInfo) => {
     fetch("http://localhost:3000/signup", {
       body: JSON.stringify(userInfo),
@@ -111,8 +114,8 @@ const App = () => {
         {currentUser && (
           <Route path="/myherbs" element={<HerbProtectedIndex herbs={herbs} currentUser={currentUser} />} />
         )}
-        <Route path="/herbshow/:id" element={<HerbShow herbs={herbs} />} />
-        <Route path="/herbnew" element={<HerbNew currentUser={currentUser} createHerb={createHerb} />} />        <Route path="/herbedit/:id" element={ <HerbEdit />} />
+        <Route path="/herbshow/:id" element={<HerbShow herbs={herbs} currentUser={currentUser} />} />
+        <Route path="/herbnew" element={<HerbNew currentUser={currentUser} createHerb={createHerb} />} />        <Route path="/herbedit/:id" element={ <HerbEdit updateHerb={updateHerb} herbs={herbs} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
