@@ -29,6 +29,10 @@ const App = () => {
     }
   },[])
 
+  const createHerb = (herb) => {
+    console.log(herb)
+  }
+
   console.log(currentUser)
   const signUp = (userInfo) => {
     fetch("http://localhost:3000/signup", {
@@ -108,8 +112,7 @@ const App = () => {
           <Route path="/myherbs" element={<HerbProtectedIndex herbs={herbs} currentUser={currentUser} />} />
         )}
         <Route path="/herbshow/:id" element={<HerbShow herbs={herbs} />} />
-        <Route path="/herbnew" element={<HerbNew />} />
-        <Route path="/herbedit/:id" element={ <HerbEdit />} />
+        <Route path="/herbnew" element={<HerbNew currentUser={currentUser} createHerb={createHerb} />} />        <Route path="/herbedit/:id" element={ <HerbEdit />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
