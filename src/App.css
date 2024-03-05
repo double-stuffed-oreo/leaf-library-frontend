@@ -148,3 +148,21 @@ body {
 .card-sections{
   color:#87AE73
 }
+
+.about-picture {
+  width: 40rem;
+}
+
+.about-box {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-text {
+  padding: 20px;
+}
