@@ -32,7 +32,9 @@ const HerbProtectedIndex = ({ herbs, currentUser}) => {
                     <NavLink to={`/herbshow/${herb.id}`} className="nav-link">
                       <Button className='herb-button'>More Details</Button>
                     </NavLink>
-                    <Button className='herb-button'>Edit Herb</Button>
+                    <NavLink to={`/herbedit/${herb.id}`}>
+                      <Button className='herb-button'>Edit Herb</Button>
+                    </NavLink>
                     <Button className='herb-button'>Delete Herb</Button>
                   </CardBody>
                 </Card>
