@@ -35,11 +35,6 @@ const HerbShow = ({ herbs, currentUser }) => {
         <NavLink to={`/herbindex`} className="herb-return-index">
           <Button className="herb-button">Back to Index</Button>
         </NavLink>
-        {currentUser && (
-          <NavLink to={`/herbedit/${currentHerb.id}`}>
-          <Button className='herb-button'>Edit Herb</Button>
-        </NavLink>
-        )}
       </div>
     </>
   );
