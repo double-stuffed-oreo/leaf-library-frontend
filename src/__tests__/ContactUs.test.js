@@ -15,7 +15,5 @@ describe("<ContactUs />", () => {
     expect(screen.getByText(/chantel/i)).toBeInTheDocument();
     expect(screen.getByText(/sakaa/i)).toBeInTheDocument();
     expect(screen.getByText(/michael/i)).toBeInTheDocument();
-    // const link = screen.getByRole("link")
-    // expect(link).toHaveAttribute("src", about)
   })
 })
