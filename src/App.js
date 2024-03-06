@@ -59,7 +59,7 @@ const App = () => {
     })
     .catch(error => console.log("Sign up errors: ",error))
   }
-
+ 
   const signIn = (userInfo) => {
     fetch("http://localhost:3000/login", {
       body: JSON.stringify(userInfo),
