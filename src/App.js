@@ -50,8 +50,17 @@ const App = () => {
       .catch((errors) => console.log("Herb create errors:", errors))
   }
 
-  const updateHerb = (herb) => {
-    console.log(herb)
+  const updateHerb = (herb, id) => {
+    fetch(`http://localhost:3000/herbs/${id}`, {
+      body: JSON.stringify(herb),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+      .then((response) => response.json())
+      .then(() => readHerb())
+      .catch((errors) => console.log("Herb update errors:", errors))
   }
 
   const signUp = (userInfo) => {
