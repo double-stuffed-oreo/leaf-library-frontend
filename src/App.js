@@ -59,7 +59,13 @@ const App = () => {
     })
     .catch(error => console.log("Sign up errors: ",error))
   }
-
+  function App() {
+    return (
+      <div className="App">
+        <ContactUs />
+      </div>
+    );
+  }
   const signIn = (userInfo) => {
     fetch("http://localhost:3000/login", {
       body: JSON.stringify(userInfo),
