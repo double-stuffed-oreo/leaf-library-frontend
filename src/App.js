@@ -34,11 +34,20 @@ const App = () => {
     fetch("http://localhost:3000/herbs")
       .then((response) => response.json())
       .then((data) => setHerbs(data))
-      .catch((errors) => console.log("Herbs read errors:", errors))
+      .catch((errors) => console.log("Herb read errors:", errors))
   }
 
   const createHerb = (herb) => {
-    console.log(herb)
+    fetch("http://localhost:3000/herbs", {
+      body: JSON.stringify(herb),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+      .then((response) => response.json())
+      .then(() => readHerb())
+      .catch((errors) => console.log("Herb create errors:", errors))
   }
 
   const updateHerb = (herb) => {
