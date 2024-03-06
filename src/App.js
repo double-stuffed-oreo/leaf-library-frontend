@@ -19,7 +19,7 @@ import './App.css';
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
-  const [herbs, setHerbs] = useState(mockHerbs)
+  const [herbs, setHerbs] = useState([])
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -27,7 +27,15 @@ const App = () => {
     if(loggedInUser) {
       setCurrentUser(JSON.parse(loggedInUser))
     }
+    readHerb()
   },[])
+
+  const readHerb = () => {
+    fetch("http://localhost:3000/herbs")
+      .then((response) => response.json())
+      .then((data) => setHerbs(data))
+      .catch((errors) => console.log("Herbs read errors:", errors))
+  }
 
   const createHerb = (herb) => {
     console.log(herb)
