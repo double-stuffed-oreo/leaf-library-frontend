@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import { Button } from "reactstrap";
 
-const HerbShow = ({ herbs, currentUser }) => {
+const HerbShow = ({ herbs, currentUser, deleteHerb }) => {
   let { id } = useParams();
   const currentHerb = herbs?.find((herb) => herb.id === +id);
   const [showElement, setShowElement] = useState(true);
   const handleDelete = () => {
     setShowElement(false);
+    deleteHerb(id)
   };
 
   return (
