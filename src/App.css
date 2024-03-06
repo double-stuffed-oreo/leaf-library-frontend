@@ -21,6 +21,7 @@ footer {
   left: 0;
   width: 100%;
   text-align: center;
+  margin-top: 30px;
 }
 
 .home-intro {
@@ -44,6 +45,7 @@ body {
   height: 80vh;
   background-repeat: no-repeat;
   margin: 20px;
+  padding: 30px;
 }
 
 .not-found-content{
@@ -70,14 +72,11 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 .herb-cards {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: row;
   width:400px;
   margin-bottom:60px;
-  object-fit:cover;
-  object-position:bottom;
   justify-content: center;
-
 }
 
 .herb-image{
@@ -103,7 +102,10 @@ body {
   align-items: center;
 
 }
-
+.flex-herbs {
+  display: flex;
+  flex-direction: row;
+}
 .herb-scientific-name{
   font-style:italic;
   text-align:center;
@@ -196,49 +198,3 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
-/* 
-.contact-us {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  margin: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contact-us h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-}
-
-.contact-us form {
-  width: 100%;
-}
-
-.contact-us label {
-  display: block;
-  margin-bottom: 10px;
-  color: #87AE73;
-}
-
-.contact-us input,
-.contact-us textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 5px;
-  background-color: #1D1C20;
-  color: #fff;
-}
-
-.contact-us button {
-  background-color: #87AE73;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-} */

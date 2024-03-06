@@ -63,6 +63,18 @@ const App = () => {
       .catch((errors) => console.log("Herb update errors:", errors))
   }
 
+  const deleteHerb = (id) => {
+    fetch(`http://localhost:3000/herbs/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+      .then((response) => response.json())
+      .then(() => readHerb())
+      .catch((errors) => console.log("delete errors:", errors))
+  }
+
   const signUp = (userInfo) => {
     fetch("http://localhost:3000/signup", {
       body: JSON.stringify(userInfo),
@@ -138,9 +150,9 @@ const App = () => {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/herbindex" element={<HerbIndex herbs={herbs} />} />
         {currentUser && (
-          <Route path="/myherbs" element={<HerbProtectedIndex herbs={herbs} currentUser={currentUser} />} />
+          <Route path="/myherbs" element={<HerbProtectedIndex herbs={herbs} currentUser={currentUser} deleteHerb={deleteHerb} />} />
         )}
-        <Route path="/herbshow/:id" element={<HerbShow herbs={herbs} currentUser={currentUser} />} />
+        <Route path="/herbshow/:id" element={<HerbShow herbs={herbs} currentUser={currentUser} deleteHerb={deleteHerb} />} />
         <Route path="/herbnew" element={<HerbNew currentUser={currentUser} createHerb={createHerb} />} />        <Route path="/herbedit/:id" element={ <HerbEdit updateHerb={updateHerb} herbs={herbs} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

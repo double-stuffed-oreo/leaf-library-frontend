@@ -3,7 +3,7 @@ import { Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button, NavItem } from 'reactstrap';
 import { NavLink } from "react-router-dom"
 
-const HerbProtectedIndex = ({ herbs, currentUser}) => {
+const HerbProtectedIndex = ({ herbs, currentUser, deleteHerb }) => {
   const myHerbs = herbs?.filter(herb => herb.user_id === currentUser.id)
 
   return (
@@ -35,7 +35,7 @@ const HerbProtectedIndex = ({ herbs, currentUser}) => {
                     <NavLink to={`/herbedit/${herb.id}`}>
                       <Button className='herb-button'>Edit Herb</Button>
                     </NavLink>
-                    <Button className='herb-button'>Delete Herb</Button>
+                    <Button onClick={() => deleteHerb(herb.id)} className='herb-button'>Delete Herb</Button>
                   </CardBody>
                 </Card>
             )
