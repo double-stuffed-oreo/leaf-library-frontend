@@ -13,7 +13,7 @@ const HerbIndex = ({ herbs }) => {
   return (
     <>
       <div className="herbs-body">
-        <h1>Recent Listings</h1>
+        <h1>Library</h1>
         <div className="flex-herbs">
           {herbs?.map((herb, index) => {
             return (

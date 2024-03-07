@@ -31,7 +31,7 @@ const HerbEdit = ({ currentUser, herbs, updateHerb }) => {
   }
 
   return (
-    <div className="new-body">
+    <div className="form-edit-container">
       <h1>Update An Herb</h1>
       <Form className="form">
         <FormGroup className="form-group">
@@ -94,9 +94,11 @@ const HerbEdit = ({ currentUser, herbs, updateHerb }) => {
             value={herbFromData.image}
           />
         </FormGroup>
-        <Button onClick={handleSubmit} type="submit" className="new-button">
-          Submit
-        </Button>
+        <div className="submit">
+          <Button onClick={handleSubmit} type="submit" className="new-button">
+            Submit
+          </Button>
+        </div>
       </Form>
     </div>
   )
