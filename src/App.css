@@ -16,12 +16,21 @@ footer {
   bottom: 0;
   color: white;
   font-size: 12pt;
-  padding: 20px;
+  padding: 10px;
   position: fixed;
   left: 0;
   width: 100%;
   text-align: center;
   margin-top: 30px;
+}
+
+.footer-link {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+footer a {
+  text-decoration: underline !important;
 }
 
 .home-intro {
@@ -44,6 +53,7 @@ body {
   background-position: 40% 50%;
   height: 80vh;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   margin: 20px;
   padding: 30px;
 }
@@ -71,12 +81,19 @@ body {
   box-sizing:border-box;
   font-family: "Roboto Condensed", sans-serif;
 }
+
+.herbs-body {
+  text-align: center;
+  color: white
+}
 .herb-cards {
   display: flex;
   flex-direction: row;
   width:400px;
   margin-bottom:60px;
   justify-content: center;
+  margin: 10px;
+  text-align: left;
 }
 
 .herb-image{
@@ -170,11 +187,31 @@ body {
 }
 
 form {
-  max-width: 400px;
+  max-width: 500px;
   margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: black;
+  color: white;
+  text-align: left;
+}
+
+.form-container {
+  text-align: center;
+  color: white;
+  padding-bottom: 50px;
+}
+
+.form-edit-container {
+  text-align: center;
+  color: white;
+  padding-bottom: 50px;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
 }
 
 label {
