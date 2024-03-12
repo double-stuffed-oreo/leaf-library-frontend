@@ -24,7 +24,6 @@ const Header = ({ currentUser, logout }) => {
               width: 50
             }}
           />
-          The Leaf Library
         </NavbarBrand>
         <NavItem>
           <NavLink to="/" active>

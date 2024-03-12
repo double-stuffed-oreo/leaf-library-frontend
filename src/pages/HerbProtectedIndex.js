@@ -9,9 +9,7 @@ const HerbProtectedIndex = ({ herbs, currentUser, deleteHerb }) => {
   return (
     <div className='herbs-body'>
       <h1>My Herbs</h1>
-      <NavItem>
         <NavLink to="/herbnew" className="nav-link">Add a New Herb</NavLink>
-      </NavItem>
       <div className='flex-herbs'>
           {myHerbs?.map((herb, index) => {
             return(

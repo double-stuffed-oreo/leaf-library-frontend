@@ -28,18 +28,17 @@ import { useNavigate, NavLink } from "react-router-dom"
         <label>
           Email:{" "}
           <input
-            className="field auth-flex"
+            className="field-auth-flex"
             type="email"
             name="email"
             placeholder="email"
             required
           />
         </label>
-        <br />
         <label>
           Password:{" "}
           <input
-            className="field auth-flex"
+            className="field-auth-flex"
             type="password"
             name="password"
             placeholder="password"
