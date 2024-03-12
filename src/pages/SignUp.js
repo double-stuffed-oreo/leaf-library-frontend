@@ -22,20 +22,21 @@ const SignUp = ({signUp}) => {
     e.target.reset()
   }
   return (
-      <div>
-      <form ref={formRef} onSubmit={handleSubmit}>
+      <div className='auth-body'>
+        <h2>Sign Up</h2>
+      <form className="form-div" ref={formRef} onSubmit={handleSubmit}>
         Email: <input type="email" name="email" placeholder='email'/>
         <br />
         Password: <input type='password' name='password' placeholder='password' />
         <br />
         Confirm Password: <input type='password' name='password_confirmation' placeholder='confirm password' />
         <br />
-        <input type='submit' value='submit'/>
+        <input className='actions' type='submit' value='submit'/>
+        <br></br>
+        <div>
+        Already registered? <NavLink to="/signin">Sign In</NavLink>
+        </div>
       </form>
-      <br />
-      <div>
-        Already registered? <NavLink to="/signin">Sign In</NavLink> here.
-      </div>
     </div>
   )
 }

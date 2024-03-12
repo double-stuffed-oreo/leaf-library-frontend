@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Leaf Library
+Welcome to Leaf Library - a platform that curates holistic medicinal remedies based on your personal diagnosis. Say goodbye to searching for the perfect herbal match in a haystack. With us, you can research and easily find the ideal natural solutions for your ailments. Share your knowledge with others by signing up and contribut to our herbal encyclopedia. Join us now and discover your perfect herbal match hassle-free!
+### Overview
+- The Leaf Library team wanted to create a web application that could provide users with holistic remedies to their ailments as well as pass along their own remedies.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  - Live Link: COMING SOON
 
-## Available Scripts
+### Features
+- This app was created using Ruby on Rails and React JS with full CRUD actions and the ability for users to sign in or sign up while saving saving each user's session.
 
-In the project directory, you can run:
+#### Built with:
+- Backend
+  - Devise
+  - JWT
+  - CORS
 
-### `yarn start`
+- Frontend
+  - react-router-dom
+  - bootstrap
+  - reactstrap
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  #### Overall Story
+  As a developer, I have been commissioned to create an application where a user can see herbs that could be used as holistic remedies or treatments. As a user, I can see a list of herbs. I can click on an herb and see more information about that herb. As a user, I can create an account and log in to the application. If I am logged in, I can add an herb to the list. As a logged in user, I can see a list of all the herbs as well as just the herbs I added. If my work is acceptable to my client, I may also be asked to add the ability to remove and update an herb from the list.

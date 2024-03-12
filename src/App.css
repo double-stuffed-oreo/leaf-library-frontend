@@ -3,6 +3,11 @@
   background-color: transparent;
 }
 
+.logo-title {
+  display: flex;
+  
+}
+
 a {
   color: white !important;
   text-decoration: none !important;
@@ -42,9 +47,12 @@ footer a {
 
 .home-contents {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space;
   text-align: center;
+  padding: 20px;
+  background-color: rgb(92, 120, 92);
 }
 
 body {
@@ -98,7 +106,6 @@ body {
 
 .herb-image{
   width:100vw;
-  /* height:300px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,3 +242,24 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.actions {
+  background-color: #4caf50;
+  max-width: 100px;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-div a {
+  text-decoration: underline !important;
+}
+
+.auth-body {
+  color: white;
+  text-align: center;
+}
+
